@@ -104,6 +104,23 @@ namespace shape
 	template<class T, class U> vec4<T&>& operator /=(vec4<T&>& a, const vec4<U>& b) { return a = vector_cast<T>(a) / b; }
 	template<class T, class U> vec4<T&>& operator *=(vec4<T&>& a, const vec4<U>& b) { return a = vector_cast<T>(a) * b; }
 
+	template<class T> inline vec2<T&>& ref(vec2<T>&);
+	template<class T> inline vec3<T&>& ref(vec3<T>&);
+	template<class T> inline vec4<T&>& ref(vec4<T>&);
+	template<class T> inline vec2<T const&>& ref(const vec2<T>&);
+	template<class T> inline vec3<T const&>& ref(const vec3<T>&);
+	template<class T> inline vec4<T const&>& ref(const vec4<T>&);
+
+	//!
+	//!
+
+	template<class T> vec2<T&>& ref(vec2<T>& v) { return { v.x(), v.y() }; }
+	template<class T> vec3<T&>& ref(vec3<T>& v) { return { v.x(), v.y(), v.z() }; }
+	template<class T> vec4<T&>& ref(vec4<T>& v) { return { v.x(), v.y(), v.z(), v.w() }; }
+	template<class T> inline vec2<T const&>& ref(const vec2<T>& v) { return { v.x(), v.y() }; }
+	template<class T> inline vec3<T const&>& ref(const vec3<T>& v) { return { v.x(), v.y(), v.z() }; }
+	template<class T> inline vec4<T const&>& ref(const vec4<T>& v) { return { v.x(), v.y(), v.z(), v.w() }; }
+
 } // namespace shape
 
 #endif
