@@ -20,39 +20,46 @@ namespace shape
 	template<class T, class F> inline bool all(const mat3<T>&, F) noexcept;
 	template<class T, class F> inline bool all(const mat4<T>&, F) noexcept;
 
+	template<class T, class F> inline void broadcast(vec2<T>&, F) noexcept;
+	template<class T, class F> inline void broadcast(vec3<T>&, F) noexcept;
+	template<class T, class F> inline void broadcast(vec4<T>&, F) noexcept;
+	template<class T, class F> inline void broadcast(mat2<T>&, F) noexcept;
+	template<class T, class F> inline void broadcast(mat3<T>&, F) noexcept;
+	template<class T, class F> inline void broadcast(mat4<T>&, F) noexcept;
+
 	//!
 	//! VECTOR x VECTOR OPERATORS
 	//!
 
-	template<class T> inline vec2<T> operator+(const vec2<T>& a, const vec2<T>& b) noexcept { return add(a, b); }
-	template<class T> inline vec2<T> operator-(const vec2<T>& a, const vec2<T>& b) noexcept { return sub(a, b); }
-	template<class T> inline vec2<T> operator*(const vec2<T>& a, const vec2<T>& b) noexcept { return mul(a, b); }
-	template<class T> inline vec2<T> operator/(const vec2<T>& a, const vec2<T>& b) noexcept { return div(a, b); }
-	template<class T> inline vec3<T> operator+(const vec3<T>& a, const vec3<T>& b) noexcept { return add(a, b); }
-	template<class T> inline vec3<T> operator-(const vec3<T>& a, const vec3<T>& b) noexcept { return sub(a, b); }
-	template<class T> inline vec3<T> operator*(const vec3<T>& a, const vec3<T>& b) noexcept { return mul(a, b); }
-	template<class T> inline vec3<T> operator/(const vec3<T>& a, const vec3<T>& b) noexcept { return div(a, b); }
-	template<class T> inline vec4<T> operator+(const vec4<T>& a, const vec4<T>& b) noexcept { return add(a, b); }
-	template<class T> inline vec4<T> operator-(const vec4<T>& a, const vec4<T>& b) noexcept { return sub(a, b); }
-	template<class T> inline vec4<T> operator*(const vec4<T>& a, const vec4<T>& b) noexcept { return mul(a, b); }
-	template<class T> inline vec4<T> operator/(const vec4<T>& a, const vec4<T>& b) noexcept { return div(a, b); }
+	template<class T> inline vec2<T> operator +(const vec2<T>& a, const vec2<T>& b) noexcept { return add(a, b); }
+	template<class T> inline vec3<T> operator +(const vec3<T>& a, const vec3<T>& b) noexcept { return add(a, b); }
+	template<class T> inline vec4<T> operator +(const vec4<T>& a, const vec4<T>& b) noexcept { return add(a, b); }
+	template<class T> inline vec2<T> operator -(const vec2<T>& a, const vec2<T>& b) noexcept { return sub(a, b); }
+	template<class T> inline vec3<T> operator -(const vec3<T>& a, const vec3<T>& b) noexcept { return sub(a, b); }
+	template<class T> inline vec4<T> operator -(const vec4<T>& a, const vec4<T>& b) noexcept { return sub(a, b); }
+	template<class T> inline vec2<T> operator *(const vec2<T>& a, const vec2<T>& b) noexcept { return mul(a, b); }
+	template<class T> inline vec3<T> operator *(const vec3<T>& a, const vec3<T>& b) noexcept { return mul(a, b); }
+	template<class T> inline vec4<T> operator *(const vec4<T>& a, const vec4<T>& b) noexcept { return mul(a, b); }
+	template<class T> inline vec2<T> operator /(const vec2<T>& a, const vec2<T>& b) noexcept { return div(a, b); }
+	template<class T> inline vec3<T> operator /(const vec3<T>& a, const vec3<T>& b) noexcept { return div(a, b); }
+	template<class T> inline vec4<T> operator /(const vec4<T>& a, const vec4<T>& b) noexcept { return div(a, b); }
 
 	//!
 	//! VECTOR ASSIGNMENTS OPERATORS
 	//!
 
-	template<class T> inline vec2<T>& operator+=(vec2<T>& a, const vec2<T>& b) noexcept { return add(a, b); }
-	template<class T> inline vec2<T>& operator-=(vec2<T>& a, const vec2<T>& b) noexcept { return sub(a, b); }
-	template<class T> inline vec2<T>& operator*=(vec2<T>& a, const vec2<T>& b) noexcept { return mul(a, b); }
-	template<class T> inline vec2<T>& operator/=(vec2<T>& a, const vec2<T>& b) noexcept { return div(a, b); }
-	template<class T> inline vec3<T>& operator+=(vec3<T>& a, const vec3<T>& b) noexcept { return add(a, b); }
-	template<class T> inline vec3<T>& operator-=(vec3<T>& a, const vec3<T>& b) noexcept { return sub(a, b); }
-	template<class T> inline vec3<T>& operator*=(vec3<T>& a, const vec3<T>& b) noexcept { return mul(a, b); }
-	template<class T> inline vec3<T>& operator/=(vec3<T>& a, const vec3<T>& b) noexcept { return div(a, b); }
-	template<class T> inline vec4<T>& operator+=(vec4<T>& a, const vec4<T>& b) noexcept { return add(a, b); }
-	template<class T> inline vec4<T>& operator-=(vec4<T>& a, const vec4<T>& b) noexcept { return sub(a, b); }
-	template<class T> inline vec4<T>& operator*=(vec4<T>& a, const vec4<T>& b) noexcept { return mul(a, b); }
-	template<class T> inline vec4<T>& operator/=(vec4<T>& a, const vec4<T>& b) noexcept { return div(a, b); }
+	template<class T> inline vec2<T>& operator +=(vec2<T>& a, const vec2<T>& b) noexcept { return add(a, b); }
+	template<class T> inline vec3<T>& operator +=(vec3<T>& a, const vec3<T>& b) noexcept { return add(a, b); }
+	template<class T> inline vec4<T>& operator +=(vec4<T>& a, const vec4<T>& b) noexcept { return add(a, b); }
+	template<class T> inline vec2<T>& operator -=(vec2<T>& a, const vec2<T>& b) noexcept { return sub(a, b); }
+	template<class T> inline vec3<T>& operator -=(vec3<T>& a, const vec3<T>& b) noexcept { return sub(a, b); }
+	template<class T> inline vec4<T>& operator -=(vec4<T>& a, const vec4<T>& b) noexcept { return sub(a, b); }
+	template<class T> inline vec2<T>& operator *=(vec2<T>& a, const vec2<T>& b) noexcept { return mul(a, b); }
+	template<class T> inline vec3<T>& operator *=(vec3<T>& a, const vec3<T>& b) noexcept { return mul(a, b); }
+	template<class T> inline vec4<T>& operator *=(vec4<T>& a, const vec4<T>& b) noexcept { return mul(a, b); }
+	template<class T> inline vec3<T>& operator /=(vec3<T>& a, const vec3<T>& b) noexcept { return div(a, b); }
+	template<class T> inline vec2<T>& operator /=(vec2<T>& a, const vec2<T>& b) noexcept { return div(a, b); }
+	template<class T> inline vec4<T>& operator /=(vec4<T>& a, const vec4<T>& b) noexcept { return div(a, b); }
 
 	//!
 	//! MATRIX x MATRIX OPERATORS
@@ -168,6 +175,49 @@ namespace shape
 			any(m.r1(), f) &&
 			any(m.r2(), f) &&
 			any(m.r3(), f);
+	}
+
+
+	template<class T, class F> void broadcast(vec2<T>& v, F f) noexcept
+	{
+		v.x() = f(v.x());
+		v.y() = f(v.y());
+	}
+
+	template<class T, class F> void broadcast(vec3<T>& v, F f) noexcept
+	{
+		v.x() = f(v.x());
+		v.y() = f(v.y());
+		v.z() = f(v.z());
+	}
+
+	template<class T, class F> void broadcast(vec4<T>& v, F f) noexcept
+	{
+		v.x() = f(v.x());
+		v.y() = f(v.y());
+		v.z() = f(v.z());
+		v.w() = f(v.w());
+	}
+
+	template<class T, class F> void broadcast(mat2<T>& m, F f) noexcept
+	{
+		broadcast(m.r0(), f);
+		broadcast(m.r1(), f);
+	}
+
+	template<class T, class F> void broadcast(mat3<T>& m, F f) noexcept
+	{
+		broadcast(m.r0(), f);
+		broadcast(m.r1(), f);
+		broadcast(m.r2(), f);
+	}
+
+	template<class T, class F> void broadcast(mat4<T>& m, F f) noexcept
+	{
+		broadcast(m.r0(), f);
+		broadcast(m.r1(), f);
+		broadcast(m.r2(), f);
+		broadcast(m.r3(), f);
 	}
 
 } // namespace shape
