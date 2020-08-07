@@ -1,8 +1,8 @@
 #ifndef SHAPE_MATH_SIMD_SSE_HH__GUARD
 #define SHAPE_MATH_SIMD_SSE_HH__GUARD
 
-#include <math/vector.hh>
-#include <math/matrix.hh>
+#include "../vector.hh"
+#include "../matrix.hh"
 
 #include <immintrin.h>
 

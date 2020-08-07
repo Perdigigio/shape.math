@@ -163,9 +163,9 @@ namespace shape
 	template<class T> inline T sum(vec2<T>);
 	template<class T> inline T sum(vec3<T>);
 	template<class T> inline T sum(vec4<T>);
-	template<class T> inline T dot(vec2<T> a, vec2<T> b) { return sum(a * b); }
-	template<class T> inline T dot(vec3<T> a, vec3<T> b) { return sum(a * b); }
-	template<class T> inline T dot(vec4<T> a, vec4<T> b) { return sum(a * b); }
+	template<class T> inline T dot(vec2<T> a, vec2<T> b) { return sum(mul(a, b)); }
+	template<class T> inline T dot(vec3<T> a, vec3<T> b) { return sum(mul(a, b)); }
+	template<class T> inline T dot(vec4<T> a, vec4<T> b) { return sum(mul(a, b)); }
 
 	template<class T> inline vec2<T> add(const vec2<T>&, const vec2<T>&) noexcept;
 	template<class T> inline vec2<T> sub(const vec2<T>&, const vec2<T>&) noexcept;

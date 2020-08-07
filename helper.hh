@@ -44,6 +44,19 @@ namespace shape
 	template<class T> inline vec3<T> operator /(const vec3<T>& a, const vec3<T>& b) noexcept { return div(a, b); }
 	template<class T> inline vec4<T> operator /(const vec4<T>& a, const vec4<T>& b) noexcept { return div(a, b); }
 
+	template<class T> inline vec2<T> operator *(T a, const vec2<T>& b) noexcept { return mul(vec2<T>(a), b); }
+	template<class T> inline vec3<T> operator *(T a, const vec3<T>& b) noexcept { return mul(vec3<T>(a), b); }
+	template<class T> inline vec4<T> operator *(T a, const vec4<T>& b) noexcept { return mul(vec4<T>(a), b); }
+	template<class T> inline vec2<T> operator /(T a, const vec2<T>& b) noexcept { return div(vec2<T>(a), b); }
+	template<class T> inline vec3<T> operator /(T a, const vec3<T>& b) noexcept { return div(vec3<T>(a), b); }
+	template<class T> inline vec4<T> operator /(T a, const vec4<T>& b) noexcept { return div(vec4<T>(a), b); }
+	template<class T> inline vec2<T> operator *(const vec2<T>& a, T b) noexcept { return mul(a, vec2<T>(b)); }
+	template<class T> inline vec3<T> operator *(const vec3<T>& a, T b) noexcept { return mul(a, vec3<T>(b)); }
+	template<class T> inline vec4<T> operator *(const vec4<T>& a, T b) noexcept { return mul(a, vec4<T>(b)); }
+	template<class T> inline vec2<T> operator /(const vec2<T>& a, T b) noexcept { return div(a, vec2<T>(b)); }
+	template<class T> inline vec3<T> operator /(const vec3<T>& a, T b) noexcept { return div(a, vec3<T>(b)); }
+	template<class T> inline vec4<T> operator /(const vec4<T>& a, T b) noexcept { return div(a, vec4<T>(b)); }
+
 	//!
 	//! VECTOR ASSIGNMENTS OPERATORS
 	//!
